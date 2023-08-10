@@ -1,0 +1,40 @@
+version: '3'
+
+services:
+  redis-service:
+    image: redis:latest
+    ports:
+      - "6370:6379"
+    networks:
+      - app-network
+
+  service-a:
+    image: "service-a:1.0"
+    ports:
+      - "8081:8080"
+    networks:
+      - app-network
+    depends_on:
+      - redis-service
+
+  # service-b:
+  #   image: "service-b:1.0"
+  #   ports:
+  #     - "8082:8082"
+  #   networks:
+  #     - app-network
+  #   depends_on:
+  #     - redis-service
+
+  orchestrator-service:
+    image: "orchestrator-service:1.0"
+    ports:
+      - "8083:8080"
+    networks:
+      - app-network
+    depends_on:
+      - redis-service
+
+networks:
+  app-network:
+    driver: bridge

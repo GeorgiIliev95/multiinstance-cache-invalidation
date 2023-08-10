@@ -1,0 +1,37 @@
+### Gradle template
+# Ignore Gradle build output directory
+build
+# Ignore Gradle project-specific cache directory
+.gradle
+# Ignore Gradle GUI config
+gradle-app.setting
+# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
+!gradle-wrapper.jar
+# Cache of project
+.gradletasknamecache
+
+### JetBrains
+# File-based project format
+*.iws
+# IntelliJ
+out/
+.idea
+.idea_modules/
+
+### Others
+# Reports
+services/sportsbook-provider/target/cucumber-report.json
+services/sportsbook-provider/allure-results
+services/sportsbook-provider-feed-daemon/allure-results
+
+# Ignore local env
+.env
+
+# Ignore java version file
+.java-version
+
+# Ignore Mac OS generated files
+.DS_Store
+
+# Lombok configuration
+lombok.config
